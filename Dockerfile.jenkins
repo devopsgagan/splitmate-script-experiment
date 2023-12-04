@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+RUN sudo wget <jenkinsrepourl> -o /etc/yum.repos.d/jenkins.repo  \
+    sudo rpm --import <keyurl> \
+    sudo apt install jenkins -y \
+    sudo systemctl enable jenkins \
+    sudo systemctl start jenkins \
+    sudo apt install git -y
+
+#######################################################################
+FROM centos:latest
+RUN sudo wget <jenkinsrepourl> -o /etc/yum.repos.d/jenkins.repo \
+    sudo rpm --import <keyurl> \
+    sudo yum install jenkins -y \
+    sudo systemctl enable jenkins \
+    sudo systemctl start jenkins \
+    sudo yum install git -y
