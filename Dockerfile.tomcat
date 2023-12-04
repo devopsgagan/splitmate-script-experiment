@@ -1,0 +1,6 @@
+FROM centos:latest
+RUN sudo yum install java-1.8* -y \
+    sudo wget <tomcat tar file url> -o /opt \
+    sudo tar -xzvf tomcat.tar.gz /opt \
+    
+    
