@@ -45,7 +45,7 @@ sudo a2dissite 000-default
 sudo service apache2 reload
 sudo mysql -u root -e 'CREATE DATABASE wordpress;'
 sudo mysql -u root -e 'CREATE USER wordpress@localhost IDENTIFIED BY "password";'
-sudo mysql -u root -e 'GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost IDENTIFIED BY "password";'
+sudo mysql -u root -e 'GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost;'
 sudo mysql -u root -e 'FLUSH PRIVILEGES;'
 sudo service mysql start
 sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
